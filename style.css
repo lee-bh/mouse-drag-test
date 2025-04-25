@@ -1,0 +1,34 @@
+body {
+    font-family: sans-serif;
+    /* Ensure body is a positioning context if elements are absolute */
+    position: relative;
+    height: 100vh; /* Make body fill viewport height */
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars if element goes off-screen */
+}
+
+.move {
+    /* --- Required for movement --- */
+    position: relative; /* or absolute */
+    /* --------------------------- */
+
+    width: 150px;
+    height: 80px;
+    background-color: lightblue;
+    border: 1px solid blue;
+    padding: 10px;
+    text-align: center;
+    cursor: grab; /* Indicate draggable */
+    user-select: none; /* Prevent text selection during drag */
+    box-sizing: border-box; /* Include padding/border in width/height */
+
+    /* Initial position (optional, can be set inline too) */
+    top: 50px;
+    left: 50px;
+}
+
+.move.dragging {
+    cursor: grabbing; /* Indicate dragging */
+    opacity: 0.8; /* Optional visual feedback */
+    z-index: 1000; /* Optional: Bring to front while dragging */
+}
